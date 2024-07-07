@@ -168,6 +168,45 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             ),
         }
     ),
+    "jtmspro": TuyaBLECategorySensorMapping(
+        products={
+            "kpn4zaf7":  # Indoor Invisible Lock
+            [
+                TuyaBLESensorMapping(
+                    dp_id=21, # Requires more testing
+                    description=SensorEntityDescription(
+                        key="alarm_lock",
+                        icon="mdi:alarm-light-outline",
+                        device_class=SensorDeviceClass.ENUM,
+                        options=[
+                            "wrong_finger",
+                            "wrong_password",
+                            "wrong_card",
+                            "wrong_face",
+                            "tongue_bad",
+                            "too_hot",
+                            "unclosed_time",
+                            "tongue_not_out",
+                            "pry",
+                            "key_in",
+                            "low_battery",
+                            "power_off",
+                            "shock",
+                            "defense",
+                        ],
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=15, # Retrieve last card used
+                    description=SensorEntityDescription(
+                        key="unlock_card",
+                        icon="mdi:nfc-variant",
+                    ),
+                ),
+                TuyaBLEBatteryMapping(dp_id=8),
+            ],
+        }
+    ),
     "szjqr": TuyaBLECategorySensorMapping(
         products={
             **dict.fromkeys(

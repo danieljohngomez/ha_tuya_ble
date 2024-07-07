@@ -194,6 +194,13 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
         },
     ),
+    "jtmspro": TuyaBLECategoryInfo(
+        products={
+            "kpn4zaf7": TuyaBLEProductInfo(  # device product_id
+                name="Indoor Invisible Lock",
+            ),
+        },
+    ),
     "szjqr": TuyaBLECategoryInfo(
         products={
             "3yqdo5yt": TuyaBLEProductInfo(  # device product_id

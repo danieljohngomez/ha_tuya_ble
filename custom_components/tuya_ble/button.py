@@ -108,6 +108,20 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
+    "jtmspro": TuyaBLECategoryButtonMapping(
+        products={
+            "kpn4zaf7":  # Indoor invisible lock
+            [
+                TuyaBLEButtonMapping(
+                    dp_id=71,
+                    description=ButtonEntityDescription(
+                        key="ble_unlock_check",
+                        icon="mdi:lock-open-variant-outline",
+                    ),
+                ),
+            ],
+        },
+    ),
 }
 
 
